@@ -1,102 +1,157 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+	<title>Initiation au langage Ruby</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/blood.css" id="theme">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/blood.css" id="theme">
 
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/monokai-sublime.css">
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/monokai-sublime.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-					document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
 
-		<!--[if lt IE 9]>
+	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+	<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<img src="img/logoClubElec.png" alt="logo club elec" style="border:none;box-shadow:none;max-width:50%;background:none">
+				<h2>Initiation au langage Ruby</h2>
+				<img src="img/ruby_logo.png" alt="logo ruby" style="border:none;box-shadow:none;max-width:15%;background:none">
+				<p>By <a href="josephcaillet.fr">Joseph Caillet</a></p>
+			</section>
+
+			<section>
+				<h2>Qui suis-je ?</h2>
+				<h3>Joseph Caillet</h3>
+				<img src="img/joseph.jpg" alt="Joseph Caillet" style="max-width: 30%; display: inline-block; border-radius: 100%">
+				<br>
+				<ul style="text-align:center;list-style:none;margin:0px;">
+					<li>Etudiant M1 à l'isen Brest</li>
+				</ul>
+				<p>
+					<small>
+						<a href="http://josephcaillet.fr">josephcaillet.fr</a>
+					 	- <a href="mailto:joseph.caillet@isen-bretagne.fr">joseph.caillet@isen-bretagne.fr</a>
+					 	- <a href="https://github.com/JosephCaillet">GitHub</a>
+					</small>
+				</p>
+			</section>
+
+			<section>
+				<h2>Disclaimer</h2>
+				<ul>
+					<li>Juste une introduction</li>
+					<li>Je ne suis pas un rubyste de longue date ;)</li>
+				</ul>
+			</section>
+
+			<section>
 				<section>
-					<img src="img/logoClubElec.png" alt="logo club elec" style="border:none;box-shadow:none;max-width:50%;background:none">
-					<h2>Initiation au langage Ruby</h2>
-					<img src="img/ruby_logo.png" alt="logo ruby" style="border:none;box-shadow:none;max-width:15%;background:none">
-					<p>By <a href="josephcaillet.fr">Joseph Caillet</a></p>
+					<h2>Introduction</h2>
 				</section>
-				
+
 				<section>
-					<h2>Qui suis-je ?</h2>
-					<h3>Joseph Caillet</h3>
-					<ul style="text-align:center;list-style:none;margin:0px;">
-                        <li>Etudiant CIR3 à l'isen Brest</li>
-                        <li>Ancien stagiaire chez Cozy Cloud</li>
-                    </ul>
-					<p>
-						<small><a href="jopsephcaillet.fr">jopsephcaillet.fr</a> - <a href="mailto:joseph.caillet@isen-bretagne.fr">joseph.caillet@isen-bretagne.fr</a></small>
-					</p>
+					<h3>松本行弘 - Yukihiro Matsumoto<br>aka Matz</h3>
+					<img src="img/matz.JPG" alt="Yukihiro Matsumoto" style="float:left">
+					<ul style="float:right;max-width:50%;margin:15% 0">
+						<li>Créateur de Ruby</li>
+						<li>Prix du logiciel libre en 2011 par la FSF et RMS</li>
+						<li>Architecte en chef pour Ruby à Heroku (PAAS)</li>
+					</ul>
 				</section>
 
 				<section>
-					<section>
-						<h3>松本行弘 - Yukihiro Matsumoto<br>aka Matz</h3>
-						<img src="img/matz.JPG" alt="Yukihiro Matsumoto" style="float:left">
-						<ul style="float:right;max-width:50%;margin:15% 0">
-							<li>Créateur de Ruby</li>
-							<li>Prix du logiciel libre en 2011 par la FSF et RMS</li>
-							<li>Architecte en chef pour Ruby à Heroku (PAAS)</li>
-						</ul>
-					</section>
+					<h4>Qu'est ce que ce langage de hipster ?</h4>
+					<p>La première version à été publiée en 1995. Principales fonctionnalitées (extrait wikipedia) :</p>
+					<ul>
+						<li>Orienté objet</li>
+						<li>Ramasse-miettes</li>
+						<li>Gestion d'exceptions</li>
+						<li>Métaprogrammation</li>
+						<li>Les blocs</li>
+						<li>Héritage simple (mais avec modules)</li>
+						<li>les nombres entiers de taille illimitée</li>
+						<li>Portée des variables définie par leur forme</li>
+						<li>Threads natifs</li>
+						<li>Reflexion/introspection</li>
+						<li>Extensions en C</li>
+					</ul>
+				</section>
 
-					<section>
-						<h4>Qu'est ce que ce langage de hipster ?</h4>
-						<p>La première version à été publiée en 1995. Principales fonctionnalitées (extrait wikipedia):</p>
-						<ul>
-							<li>Orienté objet</li>
-							<li>Ramasse-miettes</li>
-							<li>Gestion d'exceptions</li>
-							<li>Métaprogrammation</li>
-							<li>Les blocs</li>
-							<li>Héritage simple (mais avec modules)</li>
-							<li>les nombres entiers de taille illimitée</li>
-							<li>Portée des variables définie par leur forme</li>
-							<li>Threads natifs</li>
-							<li>Reflexion/introspection</li>
-						</ul>
-					</section>
+				<section>
+					<h2>Qui utilise ruby...</h2>
+					<ul>
+						<li>
+							<a href="https://www.ruby-lang.org/en/documentation/success-stories/">Succes stories, ex: Simulation (NASA)</a>
+						</li>
+						<li>
+							<a href="https://www.vagrantup.com/">Vagrant</a>
+						</li>
+						<li>
+							<a href="http://brew.sh/">Homebrew</a>
+						</li>
+						<li>
+							<a href="http://www.infront.com/blogs/the-infront-blog/2013/1/4/five-reasons-why-we-use-ruby-on-rails">Five reasons why we use Ruby on Rails</a>
+						</li>
+						<li>
+							Twitter, Airbnb, GitHub, Soundcloud, Zendesk, ...
+						</li>
+					</ul>
+				</section>
 
-					<section>
-						<h3>Les bases de Ruby</h3>
-						<ul>
-							<li><strong>Toutes</strong> les données sont des <strong>objets</strong></li>
-							<li>Plein de sucres syntaxiques !</li>
-							<li>La syntaxe est <strong>simple</strong></li>
-							<li>Langage interprété, utilisation des outils irb et ruby</li>
-						</ul>
-						<pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable>
+				<section>
+					<h2>...et pourquoi ?</h2>
+					<ul>
+						<li>Scripting et automatisation</li>
+						<li>Web (via RoR, ou pas)</li>
+						<li>Prototypage</li>
+						<li><a href="http://www.cio.com/article/2437037/developer/you-used-ruby-to-write-what--.html">etc</a></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>Bases de Ruby</h2>
+				</section>
+
+				<section>
+					<h3>Les bases de Ruby</h3>
+					<ul>
+						<li><strong>Toutes</strong> les données sont des <strong>objets</strong></li>
+						<li>Plein de sucres syntaxiques !</li>
+						<li>La syntaxe est <strong>simple</strong></li>
+						<li>Langage interprété, utilisation des outils irb (ou pry), ri, gem et ruby</li>
+					</ul>
+					<pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 puts "Hello World !" # equivalent à : puts("Hello World !");
 
 str = "omEleTtE dU FroMaGe."
@@ -104,82 +159,81 @@ puts str.downcase.split.each{ |word| word.capitalize! }.join ' '
 
 puts "The answer is #{41.next}"
 						</code></pre>
-					</section>
 				</section>
 
 				<section>
-					<h3>Les variables et le Ducktyping</h3>
-					<pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable>
-mon_nombre = 25
-puts mon_nombre.class
-puts mon_nombre.class.ancestors
-
-mon_booleen = true
-#puts mon_booleen.class
-#puts mon_booleen.class.ancestors
-
-ma_string = "Ruby"
-=begin
-puts ma_string.class
-puts ma_string.class.ancestors
-=end
-
-mon_nombre2 = 36.5
-__END__
-puts mon_nombre2.class
-puts mon_nombre2.class.ancestors
+					<h3>Conventions de nommage</h3>
+					<h4>Variables</h4>
+					<pre><code class="hljs ruby" data-trim contenteditable spellcheck="false">
+ma_variable  #une variable classique
+MA_CONSTANTE #une constante, modificable, emmet un warning
+$ma_variable_globale #brr...
+					</code></pre>
+					<h4>Méthodes</h4>
+					<pre><code class="hljs ruby" data-trim contenteditable spellcheck="false">
+ma_methode  #une methode
+ma_methode? #une methode, renvera un booleen
+ma_methode! #une methode qui modifie l'objet
+					</code></pre>
+					<h4>Classes et modules</h4>
+					<pre><code class="hljs ruby" data-trim contenteditable spellcheck="false">
+MaClasse
+MomModule
 					</code></pre>
 				</section>
 
 				<section>
-					<h3>Les opérateurs arithmétiques</h3>
-					<pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable>
+					<h3>Commentaires et variables</h3>
+					<p>Ducktyping : <i>Si ca vole comme un canard, nage comme un canard, alors c'est un canard.</i></p>
+					<pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+mon_nombre = 25
+puts mon_nombre.class
+
+mon_booleen = true
+#puts mon_booleen.class
+
+ma_string = "Ruby"
+=begin
+puts ma_string.class
+=end
+
+mon_objet = nil
+__END__
+puts mon_objet.class
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Opérateurs</h3>
+					<pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 entier = 5 + 5
 nb = entier - 2 * 4
 float = nb / 2.1
 big_int = 35 ** 2
 reste_division = 10 % 8
 puts "toto " * 3
+#versions racourcies : +=, -=, *=, /=, **=
 					</code></pre>
+					<p>Attention, i++ et i-- inexistants !</p>
 				</section>
 
 				<section>
-					<h3>Interpolation de String</h3>
-				    <pre class="RR_HiddenRubyCode"><code>
-STDOUT.sync = true
-				    </code></pre>
-				    <pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable>
+					<h3>Interpolation</h3>
+					<pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable spellcheck="false">
 puts "What is your name ?"
 name = gets.chomp
 
 puts "Hello #{name} ! :)"
-print "Hello #{name} ! :)\n"#print ne rajoute pas d' '\n'
-puts 'Hello #{name} ! :)\n'# pas d'interpolation si '' au lieu de ""
+print "Hello #{name} ! :)\n" #print ne rajoute pas d' '\n'
+puts 'Hello #{name} ! :)\n' # pas d'interpolation si '' au lieu de ""
 				    </code></pre>
 				</section>
 
 				<section>
-					<h3>Interpolation de String</h3>
-				    <pre class="RR_HiddenRubyCode"><code>
-STDOUT.sync = true
-				    </code></pre>
-				    <pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable>
-puts "Give me a number :"
-nb = gets.chomp
-
-puts "Your number is : #{nb}"
-puts "Your number is : " + nb
-				    </code></pre>
-				</section>
-
-				<section>
-					<h3>Conversion de types</h3>
-				    <pre class="RR_HiddenRubyCode"><code>
-STDOUT.sync = true
-				    </code></pre>
-				    <pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable>
+					<h3>Conversion de type</h3>
+					<pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable spellcheck="false">
 puts "nb1 :"
-nb1 = gets.chomp.to_i # existe aussi to_s, to_f
+nb1 = gets.chomp.to_i # existe aussi to_s, to_f, to_a...
 puts "nb2 :"
 nb2 = Integer(gets.chomp)
 
@@ -188,66 +242,442 @@ puts "#{nb1} + #{nb2} = #{nb1 + nb2}"
 				</section>
 
 				<section>
+					<h3>Array : Tableau</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+tab = [7, 0, 54, -9]
+tab[0] = 8
+tab.push 42
+puts tab
+tab.sort!
+print tab
+puts
+
+tab2 = "Ruby", "is", "love", "<3"
+puts tab2.join " "
+
+tab3 = Array.new(4, "titi")
+print tab3
+puts
+				    </code></pre>
+				</section>
+
+				<section>
+					<h3>Hash : Tableau associatif</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+langage1 = { "nom" => "Java", "niveau" => "haut niveau" }
+
+#plus optimisé pour la machine:
+langage2 = { :nom => "C", :niveau => "bas niveau" }
+
+#plus optimisé pour la machine et le programmeur:
+langage3 = { nom: "CSS", niveau: nil }
+
+
+langage4 = {} # ou langage4 = Hash.new
+langage4[:nom] = "Asm"
+langage4[:niveau] = "très bas niveau"
+puts langage4[:nom]
+puts langage4.keys
+				    </code></pre>
+				</section>
+
+				<section>
+					<h3>Symboles</h3>
+					<p>Un symbole représente quelque chose de maniére unique.</p>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+str1 = "chaine"
+str2 = "chaine"
+
+sym1 = :sym
+sym2 = :sym
+
+puts "str: #{str1.object_id} , #{str2.object_id} -> #{str1.object_id.equal?(str2.object_id)}"
+puts "sym: #{sym1.object_id} , #{sym2.object_id} -> #{sym1.object_id.equal?(sym2.object_id)}"
+
+#exemple d'utilité :
+puts 43.respond_to?(:next)
+puts 43.respond_to?(:gloubi_boulga)
+				    </code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>Structures de contrôle</h2>
+				</section>
+				<section>
+					<h3>Opérateurs de comparaison</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+puts "Hello" == "Hello"
+puts 45 != 314
+puts 1 >= 1.0
+puts 2 > 5
+puts 9 <= 2
+puts "titi" > 9
+puts 3 <=> 8
+puts "Hello world" =~ /world/
+				    </code></pre>
+				</section>
+				<section>
+					<h3>If elsif else</h3>
+					<pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable spellcheck="false">
+str = gets.chomp
+
+if str == "titi"
+	puts " et Grosminet"
+elsif str == "beep beep"
+	puts " et Coyote"
+else
+	puts "That's all folks !"
+	puts "Pa pala pala papa pa papalapa, pa pa pa pa pa paaa !"
+end
+				    </code></pre>
+				</section>
+				<section>
+					<h3>Attention</h3>
+					<p><strong>0 est évalué à vrai</strong>, de même que les chaines vide, les tableaux vide, etc.</p>
+					<video src="img/melanchon.mp4" loop autoplay></video>
+					<p>Seul false et Nil sont évalué à false, tout le reste (chaine vide, tableau vide) est évalué à true.</p>
+				</section>
+				<section>
+					<h3>Condition multiples</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+if 5 < 4 || 8.even?
+	#do_some_magic
+elsif 2.odd? && 8 == 9
+	#do_some_magic
+elsif 8 < 38 and 42 == 42
+	#do_some_magic
+eslif "toto" == "tutu" or "tata" == 8
+	#do_some_magic
+elsif	not 3 < 8
+	#do_some_magic
+end
+			    </code></pre>
+				</section>
+				<section>
+					<h3>Unless et racourcis</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+puts "It's true." if 25.36 < 78
+puts "That's false" unless 25.36 > 78
+
+unless false
+	puts "It is false."
+else
+	puts "What did you expect?"
+end
+			    </code></pre>
+				</section>
+				<section>
+					<h3>Case</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+note = 12
+case note
+when 0
+	puts "Tu sais pas jouer Jack, t'est mauvais !"
+when (1..6) # Cette chose est un range, un intervalle de nombre.
+	puts "Insufisant"
+when (7..12)
+	puts "A encourager"
+when (13..14)
+	puts "Bien"
+when 18, 19, 20
+	puts "Tres Bien"
+else
+	puts "Je vous soupsonne d'avoir triché, ou d'avoir entre 15 et 17."
+end
+			    </code></pre>
+				</section>
+				<section>
+					<h3>Case</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+salut = "Bonjour"
+case salut
+when "Bonjour"
+	puts "Vous parlez français !"
+when "Hola"
+	puts "Habla Espagnol !"
+when "こんにちは"
+	puts "あなたは本当にこの長い文の意味を理解しようとしましたか？"
+when /z/ #notez la regex
+	puts "Votre salutation contient la lettre z..."
+end
+			    </code></pre>
+				</section>
+				<section>
+					<h3>Bloc</h3>
+					<p>Un bloc est un bout de code, recevant éventuellemeent des paramétres.</p>
+					<pre><code class=" hljs ruby" data-trim contenteditable spellcheck="false">
+#bloc sur plusieurs lignes
+do |arg1, arg2, ...|
+	do_something_here
+	do_something_here
+	do_something_here
+end
+
+#bloc sur une ligne
+{ |arg1, arg2, ...| do_something_here }
+
+#Si aucun argument, on omet le |...|
+{ do_something_here }
+			    </code></pre>
+				</section>
+				<section>
+					<h3>Loop</h3>
+					<p>La plus simple des boucles.</p>
+					<pre><code class=" hljs ruby" data-trim contenteditable spellcheck="false">
+loop do
+	do_something_here
+	break if condition #obligatoire sinon boucle infinie
+end
+			    </code></pre>
+				</section>
+				<section>
+					<h3>While</h3>
+					<p>La boucle tant que.</p>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+i = 0
+while i != 10
+	puts i
+	i += 1
+end
+
+i = 0
+until i == 10
+	puts i
+	i += 1
+end
+			    </code></pre>
+				</section>
+				<section>
+					<h3>For in</h3>
+					<p>La boucle pour.</p>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+for elm in (0..10) do
+	puts elm
+end
+
+for elm in [1, 5, 7, 8] do
+	puts elm
+end
+			    </code></pre>
+				</section>
+				<section>
+					<h3>Each</h3>
+					<p>La boucle pour chaque.</p>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+(1..5).each { |nb| puts nb if nb.odd? }
+
+
+hash = { a: 4, b: 8, c: nil, d: (45..78)}
+
+hash.each do |key, value|
+	puts "#{key} -> #{value}"
+end
+			    </code></pre>
+				</section>
+				<section>
+					<h3>Times, upto, downto</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+5.times { |nb| puts nb }
+
+0.upto(10) { |nb| puts nb }
+
+5.downto -2 do |nb|
+	puts nb
+end
+			    </code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>Fonctions / Méthodes</h2>
+				</section>
+				<section>
+					<h3>Une première fonction :</h3>
+				</section>
+				<section>
+					<h3>Arguments facultatifs</h3>
+				</section>
+				<section>
+					<h3>Liste d'arguments</h3>
+				</section>
+				<section>
+					<h3>Keywords arguments</h3>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>Les classes</h2>
+				</section>
+				<section>
+					<h3>Késako ?</h3>
+				</section>
+				<section>
+					<h3>Visibilité</h3>
+				</section>
+				<section>
+					<h3>Accésseurs et mutateurs</h3>
+				</section>
+				<section>
+					<h3>Accésseurs et mutateurs</h3>
+				</section>
+				<section>
+					<h3>Accésseurs et mutateurs</h3>
+				</section>
+				<section>
+					<h3>Accésseurs et mutateurs</h3>
+				</section>
+				<section>
+					<h3>Héritage</h3>
+				</section>
+				<section>
+					<h3>Self</h3>
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<h2>Bonus</h2>
+				</section>
+				<section>
+					<h3>Commandes système</h3>
+				</section>
+				<section>
+					<h3>Methodes et variables statiques</h3>
+				</section>
+				<section>
+					<h3>Opérateurs bonus</h3>
+				</section>
+				<section>
+					<h3>Contrôle d'execution supplementaire</h3>
+				</section>
+				<section>
+					<h3>Exeption</h3>
+				</section>
+				<section>
+					<h3>Visibilités public, protected, private</h3>
+				</section>
+				<section>
+					<h3>Modules</h3>
+				</section>
+				<section>
+					<h3>Métaprogrammation</h3>
+					missing method
+				</section>
+			</section>
+
+			<section>
+				<h3>Interpolation de String</h3>
+				<pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable spellcheck="false">
+puts "Give me a number :"
+nb = gets.chomp
+#nb = 42
+
+puts "Your number is : #{nb}" #Méthode la plus utilisée
+puts "Your number is : " + nb.to_s
+puts "Your number is : " << nb.to_s
+				    </code></pre>
+			</section>
+
+			<section>
+				<h3>Vitesse du ventilo</h3>
+				<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+`sensors`.lines.each { |l| puts l.split[1] if l.include? "cpu_fan" }
+				</code></pre>
+			</section>
+
+			<section>
+				<section>
 					<h2>Ruby demo n°1</h2>
 					<h3>Simple output...</h3>
-				    <pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable>
+					<pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 puts "Hello World !"
-				    </code></pre>
+						</code></pre>
 				</section>
 
 				<section>
 					<h2>Ruby demo n°2</h2>
 					<h3>Using inputs...</h3>
-				    <pre class="RR_HiddenRubyCode"><code>
-STDOUT.sync = true
-				    </code></pre>
-				    <pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable>
+					<pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable spellcheck="false">
 puts "What is your name ?"
 name = gets.chomp
 puts "Hello #{name} ! :)"
-				    </code></pre>
+						</code></pre>
 				</section>
 
 				<section>
-					<h1>Fin du cours</h1>
-					<p>Merci de votre attention :)</p>
-					<h4>Des questions ?</h4>
+					<h2>Ruby demo n°3</h2>
+					<h3>Using inputs...</h3>
+					<pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable spellcheck="false">
+puts "What is your favorite number ?"
+name = gets.chomp
+puts "Hello #{name} ! :)"
+						</code></pre>
 				</section>
-			</div>
+
+				<section>
+					<h2>Ruby demo n°4</h2>
+					<h3>Using inputs...</h3>
+					<pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable spellcheck="false">
+puts "What is your favorite color ?"
+name = gets.chomp
+puts "Hello #{name} ! :)"
+						</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<h1>Pour aller plus loin</h1>
+				<ul>
+					<li>http://tryruby.org</li>
+					<li>https://www.ruby-lang.org/fr/documentation/quickstart/</li>
+					<li>https://www.codecademy.com/learn/ruby</li>
+					<ul>
+			</section>
+
+			<section>
+				<h1>Fin du cours</h1>
+				<p>Merci de votre attention :)</p>
+				<h4>Des questions ?</h4>
+			</section>
 		</div>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+			slideNumber: true,
+			mouseWheel: false,
 
-				slideNumber: true,
-				mouseWheel: false,
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'http://localhost:8080/socket.io/socket.io.js', async: true, condition: function () { return !!document.querySelector('.RR_RubyCode'); } },
+				{ src: 'plugin/remote-ruby/remote-ruby.js', async: true, condition: function () { return !!document.querySelector('.RR_RubyCode'); } }
+			]
+		});
+	</script>
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'http://localhost:8080/socket.io/socket.io.js', async: true, condition: function() { return !!document.querySelector( '.RR_RubyCode' ); } },
-					{ src: 'plugin/remote-ruby/remote-ruby.js', async: true, condition: function() { return !!document.querySelector( '.RR_RubyCode' );} }
-				]
-			});
+</body>
 
-		</script>
-
-	</body>
 </html>
