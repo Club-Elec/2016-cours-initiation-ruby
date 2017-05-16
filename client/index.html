@@ -247,6 +247,7 @@ puts "#{nb1} + #{nb2} = #{nb1 + nb2}"
 tab = [7, 0, 54, -9]
 tab[0] = 8
 tab.push 42
+tab << 36
 puts tab
 tab.sort!
 print tab
@@ -447,6 +448,9 @@ until i == 10
 	puts i
 	i += 1
 end
+
+i = 0
+puts i += 1 while i != 10
 			    </code></pre>
 				</section>
 				<section>
@@ -480,8 +484,10 @@ end
 					<h3>Times, upto, downto</h3>
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 5.times { |nb| puts nb }
+puts
 
-0.upto(10) { |nb| puts nb }
+7.upto(10) { |nb| puts nb }
+puts
 
 5.downto -2 do |nb|
 	puts nb
@@ -495,16 +501,76 @@ end
 					<h2>Fonctions / Méthodes</h2>
 				</section>
 				<section>
-					<h3>Une première fonction :</h3>
+					<h3>Definir une fonction :</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+def dire_boujour
+	puts "Salutation, je suis Buzz l'éclair."
+end
+
+dire_boujour
+
+def dire_boujour(prenom)
+	puts "Bonjour #{prenom} ! :)"
+end
+
+dire_boujour "l'ISEN Brest"
+dire_boujour("l'ISEN Brest")
+			    </code></pre>
 				</section>
 				<section>
 					<h3>Arguments facultatifs</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+ #argument avec valeur par default toujours en dernière position
+def dire_boujour(prenom, smiley = ":)")
+	puts "Bonjour #{prenom} ! #{smiley}"
+end
+
+dire_boujour "les rubystes"
+dire_boujour "les rubystes", ":D"
+					</code></pre>
 				</section>
 				<section>
 					<h3>Liste d'arguments</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+def dire_boujour(*prenom) #prenom est une liste d'argument
+	puts "Bonjour #{prenom.join ', '} !"
+end
+
+dire_boujour "les rubystes"
+dire_boujour "Pierre", "Paul", "Jaques", "Jean"
+
+__END__
+#Prototypes possibles:
+def dire_boujour(*prenom)
+def dire_boujour(titi,*prenom)
+def dire_boujour(*prenom, toto)
+def dire_boujour(tutu, *prenom, tata)
+					</code></pre>
 				</section>
 				<section>
 					<h3>Keywords arguments</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+def seconds(sec: 0, min: 0, hour: 0)
+	return sec + min*60 + hour*60**2
+end
+
+puts seconds(min: 2)
+puts seconds(min: 1, sec: 4)
+puts seconds(hour: 1, sec: 41, min: 3)
+					</code></pre>
+				</section>
+				<section>
+					<h3>Return implicite</h3>
+					<p>La dernière valeur évaluée est retournée</p>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+def seconds(sec: 0, min: 0, hour: 0)
+	sec + min*60 + hour*60**2
+end
+
+puts seconds(min: 2)
+puts seconds(min: 1, sec: 4)
+puts seconds(hour: 1, sec: 41, min: 3)
+					</code></pre>
 				</section>
 			</section>
 
@@ -514,30 +580,186 @@ end
 				</section>
 				<section>
 					<h3>Késako ?</h3>
+					<p>Une classe est un "plan" pour fabriquer un objet, qui aura des propriétées et des méthodes.</p>
 				</section>
 				<section>
 					<h3>Visibilité</h3>
+					<p>Les attributs seront toujours <strong>privés</strong>.</p>
+					<p>Les methodes sont <strong>publiques</strong> par défaut, peuvent être protected ou private (contrairement aux attributs).</p>
 				</section>
 				<section>
-					<h3>Accésseurs et mutateurs</h3>
+					<h3>Création d'une classe</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+class Animal
+	def initialize(nom)
+		@nom = nom
+	end
+
+	def dire_boujour
+		puts "Je m'appele #{@nom} !"
+	end
+end
+
+hamster = Animal.new "Pachmina"
+hamster.dire_boujour
+					</code></pre>
 				</section>
 				<section>
-					<h3>Accésseurs et mutateurs</h3>
+					<h3>Getters et setters</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+class Animal
+	def initialize(nom)
+		@nom = nom
+		@message = nil
+	end
+
+	def set_message(message)
+		@message = ", " + message
+	end
+
+	def dire_boujour
+		puts "Je m'appele #{@nom}#{@message} !"
+	end
+end
+
+hamster = Animal.new "Chapeau"
+hamster.dire_boujour
+hamster.set_message "devinez ce que j'ai sur la tête"
+hamster.dire_boujour
+					</code></pre>
 				</section>
 				<section>
-					<h3>Accésseurs et mutateurs</h3>
+					<h3>Getters et setters</h3>
+					<pre class="RR_HiddenRubyCode"><code>
+class Animal
+	def message=(message)
+		@message = ", " + message
+	end
+end
+    </code></pre>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+class Animal
+	def initialize(nom)
+		@nom = nom
+		@message = nil
+	end
+
+	def dire_boujour
+		puts "Je m'appele #{@nom}#{@message} !"
+	end
+end
+
+hamster = Animal.new "Chapeau"
+hamster.dire_boujour
+hamster.message = "devinez ce que j'ai sur la tête"
+hamster.dire_boujour
+
+
+
+
+
+
+
+
+class Animal
+	def message=(message)
+		@message = ", " + message
+	end
+end
+					</code></pre>
 				</section>
 				<section>
-					<h3>Accésseurs et mutateurs</h3>
+					<h3>Getters et setters</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+class Animal
+	attr_reader :nom, :message #genération des getters
+	attr_writer :nom, :message #genération des setters
+	def initialize(nom)
+		@nom = nom
+		@message = nil
+	end
+
+	def dire_boujour
+		puts "Je m'appele #{@nom}#{@message} !"
+	end
+end
+
+hamster = Animal.new "Chapeau"
+hamster.dire_boujour
+hamster.message = "devinez ce que j'ai sur la tête"
+hamster.dire_boujour
+puts hamster.nom
+					</code></pre>
+				</section>
+				<section>
+					<h3>Getters et setters</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+class Animal
+	attr_accessor :nom, :message #genération des getters et des setters
+
+	def initialize(nom)
+		@nom = nom
+		@message = nil
+	end
+
+	def dire_boujour
+		puts "Je m'appele #{@nom}#{@message} !"
+	end
+end
+
+hamster = Animal.new "Chapeau"
+hamster.dire_boujour
+hamster.message = "devinez ce que j'ai sur la tête"
+hamster.dire_boujour
+puts hamster.nom
+					</code></pre>
 				</section>
 				<section>
 					<h3>Héritage</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+class Animal
+	attr_accessor :nom
+
+	def initialize(nom)
+		@nom = nom
+	end
+end
+
+class HeroDessinAnime < Animal
+	def initialize(nom, generique)
+		super(nom)
+		@generique = generique
+	end
+
+	def chanter
+		puts @generique
+	end
+end
+
+hamster = HeroDessinAnime.new("Hamtaro", "Hamtaro, c'est moi le plus petit des grand héro...")
+hamster.chanter
+puts hamster.nom
+					</code></pre>
 				</section>
 				<section>
 					<h3>Self</h3>
+					<p>Référence à l'objet courant.</p>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+class Fixnum #Modification des classes existantes
+	def double
+		self*2
+	end
+
+	def equal_number? nb
+		self.equal? nb
+	end
+end
+
+puts 5.double
+puts 5.equal_number? 42
+					</code></pre>
 				</section>
 			</section>
-
 
 			<section>
 				<section>
@@ -545,104 +767,276 @@ end
 				</section>
 				<section>
 					<h3>Commandes système</h3>
+					<p>Vitesse du ventilo</p>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+`sensors`.lines.each { |l| puts l.split[1] if l.include? "cpu_fan" }
+				</code></pre>
 				</section>
 				<section>
 					<h3>Methodes et variables statiques</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+class Animal
+	@@instance_number = 0
+
+	def initialize
+		@@instance_number += 1
+	end
+
+	def self.get_instance_number
+		@@instance_number
+	end
+end
+
+Animal.new
+puts Animal.get_instance_number
+Animal.new
+puts Animal.get_instance_number
+					</code></pre>
 				</section>
 				<section>
 					<h3>Opérateurs bonus</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+#affectation parallèle
+a, b, c = 1, 5, 3
+puts a, b, c
+
+def methode
+	return true, 5
+end
+
+a, b = methode
+puts a, b
+
+#ternaire
+puts 8 == 8 ? "vrai" : "faux"
+
+#range
+(1..10) #nombre de 1 à 10
+(1...10) #nombre de 1 à 9
+
+#Je met ce truc parceque c'est drole
+(1..20).each do |i|
+  puts i if (i == 3)..(i == 15)
+end
+
+#résolution de porté
+Macron::CE_QUE_JE_VEUX
+#c'est que vous, partout, vous codiez en Ruby, car c'est notre projet!
+
+#si non défini
+toto ||= 42
+					</code></pre>
 				</section>
 				<section>
 					<h3>Contrôle d'execution supplementaire</h3>
+					<pre><code class=" hljs ruby" data-trim contenteditable spellcheck="false">
+break #quitter un bloc, une boucle
+next #passer à l'itération suivante
+redo #recomencer l'itéreation courante
+retry #reprendre toute l'execution du bloc depuis le début
+					</code></pre>
 				</section>
 				<section>
 					<h3>Exeption</h3>
+					<pre><code class=" hljs ruby" data-trim contenteditable spellcheck="false">
+begin #implicite quand dans une methode
+	ouvrir_fichier
+rescue PasLesDroitsExeption
+	afficher_erreur_de_droit
+rescue FichierInexistantExeption
+	demander_nouveau_non_fichier
+	retry
+else #autres types d'exeptions
+	afficher_erreur
+ensure
+	#toujours exécuté
+end
+
+#lever une exeption:
+raise
+raise "Message"
+raise TypeException, "Message"
+					</code></pre>
 				</section>
 				<section>
 					<h3>Visibilités public, protected, private</h3>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+class A
+	attr_accessor :nom
+
+	public
+	def call_public(a)
+		a.pub
+	end
+
+	def call_protected(a)
+		a.pro
+	end
+
+	def call_private(a)
+		a.pri
+	end
+
+	public
+	def pub
+		puts "Je suis public, et je suis #{@nom}"
+	end
+
+	protected
+	def pro
+		puts "Je suis protected,  et je suis #{@nom}"
+	end
+
+	private
+	def pri
+		puts "Je suis private,  et je suis #{@nom}"
+	end
+end
+
+a1 = A.new
+a1.nom = "a1"
+
+a2 = A.new
+a2.nom = "a2"
+
+#appel des methode sur a1
+#a1.pub
+#a1.pro
+#a1.pri
+
+#demande à a1 d'appeler methode sur a2
+#a1.call_public a2
+#a1.call_protected a2
+#a1.call_private a2
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Multi fichiers</h3>
+					<pre><code class=" hljs ruby" data-trim contenteditable spellcheck="false">
+require 'mon_fichier.rb'
+#ou
+require 'mon_fichier'
+					</code></pre>
 				</section>
 				<section>
 					<h3>Modules</h3>
+					<ul>
+						<li>Servent de namespaces</li>
+						<li>Permettent de réaliser des mixins</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Modules</h3>
+					<p>On peut utliser les modules pour faire des énumérations, si les valeurs ont un sens. Sinon, on préférera les symboles.</p>
+					<pre><code class=" hljs ruby" data-trim contenteditable spellcheck="false">
+module Volume
+	HIGHT = 100
+	MEDIUM = 66
+	LOW = 33
+	MUTE = 0
+end
+					</code></pre>
+				</section>
+				<section>
+					<h3>Modules</h3>
+					<p>Mixin: permet de "faire de l'héritage multiple".</p>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
+module Trigo
+	PI = 3.14
+
+	def cos
+		puts "calcul de cosinus..."
+	end
+end
+
+module Logarithme
+	E = 0,577
+
+	def ln
+		puts "calcul logarythme népérien..."
+	end
+end
+
+class Maths
+	include Trigo #methode de Trigo deviennent des méthodes de classe de Maths
+	extend Logarithme # methode de Logarithme deviennent des méthode d'instance de la classe Maths
+
+	def sqrt
+		puts "calcul racinne carrée..."
+	end
+end
+
+Maths.ln
+puts Maths::PI
+
+m = Maths.new
+m.cos
+m.sqrt
+					</code></pre>
 				</section>
 				<section>
 					<h3>Métaprogrammation</h3>
-					missing method
-				</section>
-			</section>
-
-			<section>
-				<h3>Interpolation de String</h3>
-				<pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable spellcheck="false">
-puts "Give me a number :"
-nb = gets.chomp
-#nb = 42
-
-puts "Your number is : #{nb}" #Méthode la plus utilisée
-puts "Your number is : " + nb.to_s
-puts "Your number is : " << nb.to_s
-				    </code></pre>
-			</section>
-
-			<section>
-				<h3>Vitesse du ventilo</h3>
-				<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
-`sensors`.lines.each { |l| puts l.split[1] if l.include? "cpu_fan" }
-				</code></pre>
-			</section>
-
-			<section>
-				<section>
-					<h2>Ruby demo n°1</h2>
-					<h3>Simple output...</h3>
-					<pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
-puts "Hello World !"
-						</code></pre>
-				</section>
-
-				<section>
-					<h2>Ruby demo n°2</h2>
-					<h3>Using inputs...</h3>
-					<pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable spellcheck="false">
-puts "What is your name ?"
-name = gets.chomp
-puts "Hello #{name} ! :)"
-						</code></pre>
-				</section>
-
-				<section>
-					<h2>Ruby demo n°3</h2>
-					<h3>Using inputs...</h3>
-					<pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable spellcheck="false">
-puts "What is your favorite number ?"
-name = gets.chomp
-puts "Hello #{name} ! :)"
-						</code></pre>
-				</section>
-
-				<section>
-					<h2>Ruby demo n°4</h2>
-					<h3>Using inputs...</h3>
-					<pre><code class=" hljs ruby RR_RubyCode RR_FullIO" data-trim contenteditable spellcheck="false">
-puts "What is your favorite color ?"
-name = gets.chomp
-puts "Hello #{name} ! :)"
-						</code></pre>
-				</section>
-			</section>
-
-			<section>
-				<h1>Pour aller plus loin</h1>
-				<ul>
-					<li>http://tryruby.org</li>
-					<li>https://www.ruby-lang.org/fr/documentation/quickstart/</li>
-					<li>https://www.codecademy.com/learn/ruby</li>
 					<ul>
+						<li>Classes ouvertes</li>
+						<li>Réféxivité/Introspection</li>
+						<li>Création/destrcution de méthodes à l'execution</li>
+						<li>Possibilité de changer les comportements en cas d'erreur</li>
+						<li>Eigen class</li>
+					</ul>
+					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false" style="max-height: 15em">
+class A
+	def methode_normale
+		puts "hello"
+	end
+
+	def method_missing(name)
+		puts "La methode #{name} n'existe pas..."
+	end
+end
+
+a1 = A.new
+a2 = A.new
+
+def a1.methode_eigen
+	puts "eigen !"
+end
+
+a1.methode_normale
+a2.methode_normale
+a1.methode_eigen
+a2.methode_eigen
+					</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<h2>Pour aller plus loin</h2>
+				<small>
+					<ul>
+						<li><a href="http://tryruby.org">http://tryruby.org</a></li>
+						<li><a href="https://www.ruby-lang.org/fr/documentation/quickstart/">https://www.ruby-lang.org/fr/documentation/quickstart/</a></li>
+						<li><a href="https://www.codecademy.com/learn/ruby">https://www.codecademy.com/learn/ruby</a></li>
+						<li><a href="https://zestedesavoir.com/tutoriels/634/une-introduction-a-ruby/">https://zestedesavoir.com/tutoriels/634/une-introduction-a-ruby/</a></li>
+						<li><a href="https://zestedesavoir.com/tutoriels/634/une-introduction-a-ruby/">https://zestedesavoir.com/tutoriels/634/une-introduction-a-ruby/</a></li>
+						<li><a href="https://www.tutorialspoint.com/ruby/index.htm">https://www.tutorialspoint.com/ruby/index.htm</a></li>
+						<li><a href="https://www.camilleroux.com/wp-content/uploads/2010/08/whyrailsisawesome-100809073955-phpapp01.pdf">https://www.camilleroux.com/wp-content/uploads/2010/08/whyrailsisawesome-100809073955-phpapp01.pdf</a></li>
+						<li><a href="https://www.youtube.com/playlist?list=PLjwdMgw5TTLVVJHvstDYgqTCao-e-BgA8">https://www.youtube.com/playlist?list=PLjwdMgw5TTLVVJHvstDYgqTCao-e-BgA8</a></li>
+						<li><a href="https://rubymonk.com/">https://rubymonk.com/</a></li>
+						<li><a href="http://www.blackbytes.info/2017/02/weird-ruby/">http://www.blackbytes.info/2017/02/weird-ruby/</a></li>
+						<li><a href="http://poignant.guide/">http://poignant.guide/</a></li>
+						<li><a href="http://rubykoans.com/">http://rubykoans.com/</a></li>
+						<li><a href="http://pbnaigeon.developpez.com/tutoriel/ruby/premiers-pas-avec-ruby/">http://pbnaigeon.developpez.com/tutoriel/ruby/premiers-pas-avec-ruby/</a></li>
+						<li><a href="http://devdocs.io/ruby">http://devdocs.io/ruby</a></li>
+					</ul>
+				</small>
 			</section>
 
 			<section>
 				<h1>Fin du cours</h1>
 				<p>Merci de votre attention :)</p>
 				<h4>Des questions ?</h4>
+				<h4>Des remarques ?</h4>
 			</section>
 		</div>
 	</div>
