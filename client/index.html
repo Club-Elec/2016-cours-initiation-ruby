@@ -45,7 +45,7 @@
 				<img src="img/logoClubElec.png" alt="logo club elec" style="border:none;box-shadow:none;max-width:50%;background:none">
 				<h2>Initiation au langage Ruby</h2>
 				<img src="img/ruby_logo.png" alt="logo ruby" style="border:none;box-shadow:none;max-width:15%;background:none">
-				<p>By <a href="josephcaillet.fr">Joseph Caillet</a></p>
+				<p>By <a href="http://josephcaillet.fr">Joseph Caillet</a></p>
 			</section>
 
 			<section>
@@ -54,7 +54,7 @@
 				<img src="img/joseph.jpg" alt="Joseph Caillet" style="max-width: 30%; display: inline-block; border-radius: 100%">
 				<br>
 				<ul style="text-align:center;list-style:none;margin:0px;">
-					<li>Etudiant M1 à l'isen Brest</li>
+					<li>Étudiant M1 à l'ISEN Brest</li>
 				</ul>
 				<p>
 					<small>
@@ -89,8 +89,8 @@
 				</section>
 
 				<section>
-					<h4>Qu'est ce que ce langage de hipster ?</h4>
-					<p>La première version à été publiée en 1995. Principales fonctionnalitées (extrait wikipedia) :</p>
+					<h4>Qu'est-ce que ce langage de hipster ?</h4>
+					<p>La première version à été publiée en 1995. Principales fonctionnalités (extrait wikipedia) :</p>
 					<ul>
 						<li>Orienté objet</li>
 						<li>Ramasse-miettes</li>
@@ -98,10 +98,10 @@
 						<li>Métaprogrammation</li>
 						<li>Les blocs</li>
 						<li>Héritage simple (mais avec modules)</li>
-						<li>les nombres entiers de taille illimitée</li>
+						<li>Nombres entiers de taille illimitée</li>
 						<li>Portée des variables définie par leur forme</li>
 						<li>Threads natifs</li>
-						<li>Reflexion/introspection</li>
+						<li>Réflexion / introspection</li>
 						<li>Extensions en C</li>
 					</ul>
 				</section>
@@ -152,7 +152,7 @@
 						<li>Langage interprété, utilisation des outils irb (ou pry), ri, gem et ruby</li>
 					</ul>
 					<pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
-puts "Hello World !" # equivalent à : puts("Hello World !");
+puts "Hello World !" # équivalent à : puts("Hello World !");
 
 str = "omEleTtE dU FroMaGe."
 puts str.downcase.split.each{ |word| word.capitalize! }.join ' '
@@ -166,14 +166,14 @@ puts "The answer is #{41.next}"
 					<h4>Variables</h4>
 					<pre><code class="hljs ruby" data-trim contenteditable spellcheck="false">
 ma_variable  #une variable classique
-MA_CONSTANTE #une constante, modificable, emmet un warning
+MA_CONSTANTE #une constante, modifiable, émet un warning
 $ma_variable_globale #brr...
 					</code></pre>
 					<h4>Méthodes</h4>
 					<pre><code class="hljs ruby" data-trim contenteditable spellcheck="false">
-ma_methode  #une methode
-ma_methode? #une methode, renvera un booleen
-ma_methode! #une methode qui modifie l'objet
+ma_methode  #une méthode
+ma_methode? #une méthode, renvera un booleen
+ma_methode! #une méthode qui modifie l'objet
 					</code></pre>
 					<h4>Classes et modules</h4>
 					<pre><code class="hljs ruby" data-trim contenteditable spellcheck="false">
@@ -184,7 +184,7 @@ MomModule
 
 				<section>
 					<h3>Commentaires et variables</h3>
-					<p>Ducktyping : <i>Si ca vole comme un canard, nage comme un canard, alors c'est un canard.</i></p>
+					<p>Ducktyping : <i>si ça vole comme un canard, nage comme un canard, alors c'est un canard.</i></p>
 					<pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 mon_nombre = 25
 puts mon_nombre.class
@@ -206,7 +206,7 @@ puts mon_objet.class
 				<section>
 					<h3>Opérateurs</h3>
 					<pre><code class="hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
-entier = 5 + 5
+integer = 5 + 5
 nb = entier - 2 * 4
 float = nb / 2.1
 big_int = 35 ** 2
@@ -267,10 +267,10 @@ puts
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 langage1 = { "nom" => "Java", "niveau" => "haut niveau" }
 
-#plus optimisé pour la machine:
+#plus optimisé pour la machine :
 langage2 = { :nom => "C", :niveau => "bas niveau" }
 
-#plus optimisé pour la machine et le programmeur:
+#plus optimisé pour la machine et le programmeur :
 langage3 = { nom: "CSS", niveau: nil }
 
 
@@ -284,7 +284,7 @@ puts langage4.keys
 
 				<section>
 					<h3>Symboles</h3>
-					<p>Un symbole représente quelque chose de maniére unique.</p>
+					<p>Un symbole représente quelque chose de manière unique.</p>
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 str1 = "chaine"
 str2 = "chaine"
@@ -336,12 +336,12 @@ end
 				</section>
 				<section>
 					<h3>Attention</h3>
-					<p><strong>0 est évalué à vrai</strong>, de même que les chaines vide, les tableaux vide, etc.</p>
+					<p><strong>0 est évalué à vrai</strong>, de même que les chaînes vides, les tableaux vides, etc.</p>
 					<video src="img/melanchon.mp4" loop autoplay></video>
-					<p>Seul false et Nil sont évalué à false, tout le reste (chaine vide, tableau vide) est évalué à true.</p>
+					<p>Seul false et Nil sont évalué à false, tout le reste est évalué à true.</p>
 				</section>
 				<section>
-					<h3>Condition multiples</h3>
+					<h3>Conditions multiples</h3>
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 if 5 < 4 || 8.even?
 	#do_some_magic
@@ -357,7 +357,7 @@ end
 			    </code></pre>
 				</section>
 				<section>
-					<h3>Unless et racourcis</h3>
+					<h3>Unless et autres raccourcis</h3>
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 puts "It's true." if 25.36 < 78
 puts "That's false" unless 25.36 > 78
@@ -377,15 +377,15 @@ case note
 when 0
 	puts "Tu sais pas jouer Jack, t'est mauvais !"
 when (1..6) # Cette chose est un range, un intervalle de nombre.
-	puts "Insufisant"
+	puts "Insuffisant"
 when (7..12)
-	puts "A encourager"
+	puts "À encourager"
 when (13..14)
 	puts "Bien"
 when 18, 19, 20
-	puts "Tres Bien"
+	puts "Très Bien"
 else
-	puts "Je vous soupsonne d'avoir triché, ou d'avoir entre 15 et 17."
+	puts "Je vous soupçonne d'avoir triché, ou d'avoir entre 15 et 17."
 end
 			    </code></pre>
 				</section>
@@ -407,7 +407,7 @@ end
 				</section>
 				<section>
 					<h3>Bloc</h3>
-					<p>Un bloc est un bout de code, recevant éventuellemeent des paramétres.</p>
+					<p>Un bloc est un bout de code, recevant éventuellement des paramètres.</p>
 					<pre><code class=" hljs ruby" data-trim contenteditable spellcheck="false">
 #bloc sur plusieurs lignes
 do |arg1, arg2, ...|
@@ -501,7 +501,7 @@ end
 					<h2>Fonctions / Méthodes</h2>
 				</section>
 				<section>
-					<h3>Definir une fonction :</h3>
+					<h3>Définir une fonction :</h3>
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 def dire_boujour
 	puts "Salutation, je suis Buzz l'éclair."
@@ -532,7 +532,7 @@ dire_boujour "les rubystes", ":D"
 				<section>
 					<h3>Liste d'arguments</h3>
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
-def dire_boujour(*prenom) #prenom est une liste d'argument
+def dire_boujour(*prenom) #prenom est une liste d'arguments
 	puts "Bonjour #{prenom.join ', '} !"
 end
 
@@ -561,7 +561,7 @@ puts seconds(hour: 1, sec: 41, min: 3)
 				</section>
 				<section>
 					<h3>Return implicite</h3>
-					<p>La dernière valeur évaluée est retournée</p>
+					<p>La dernière valeur évaluée est retournée.</p>
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 def seconds(sec: 0, min: 0, hour: 0)
 	sec + min*60 + hour*60**2
@@ -580,12 +580,12 @@ puts seconds(hour: 1, sec: 41, min: 3)
 				</section>
 				<section>
 					<h3>Késako ?</h3>
-					<p>Une classe est un "plan" pour fabriquer un objet, qui aura des propriétées et des méthodes.</p>
+					<p>Une classe est un "plan", un "moule", pour fabriquer un objet, qui aura des propriétés et des méthodes.</p>
 				</section>
 				<section>
 					<h3>Visibilité</h3>
 					<p>Les attributs seront toujours <strong>privés</strong>.</p>
-					<p>Les methodes sont <strong>publiques</strong> par défaut, peuvent être protected ou private (contrairement aux attributs).</p>
+					<p>Les méthodes sont <strong>publiques</strong> par défaut, peuvent être protected ou private (contrairement aux attributs).</p>
 				</section>
 				<section>
 					<h3>Création d'une classe</h3>
@@ -672,8 +672,8 @@ end
 					<h3>Getters et setters</h3>
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 class Animal
-	attr_reader :nom, :message #genération des getters
-	attr_writer :nom, :message #genération des setters
+	attr_reader :nom, :message #génération des getters
+	attr_writer :nom, :message #génération des setters
 	def initialize(nom)
 		@nom = nom
 		@message = nil
@@ -695,7 +695,7 @@ puts hamster.nom
 					<h3>Getters et setters</h3>
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 class Animal
-	attr_accessor :nom, :message #genération des getters et des setters
+	attr_accessor :nom, :message #génération des getters et des setters
 
 	def initialize(nom)
 		@nom = nom
@@ -736,7 +736,7 @@ class HeroDessinAnime < Animal
 	end
 end
 
-hamster = HeroDessinAnime.new("Hamtaro", "Hamtaro, c'est moi le plus petit des grand héro...")
+hamster = HeroDessinAnime.new("Hamtaro", "Hamtaro, c'est moi le plus petit des grands héros...")
 hamster.chanter
 puts hamster.nom
 					</code></pre>
@@ -766,14 +766,14 @@ puts 5.equal_number? 42
 					<h2>Bonus</h2>
 				</section>
 				<section>
-					<h3>Commandes système</h3>
+					<h3>Commandes systèmes</h3>
 					<p>Vitesse du ventilo</p>
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 `sensors`.lines.each { |l| puts l.split[1] if l.include? "cpu_fan" }
 				</code></pre>
 				</section>
 				<section>
-					<h3>Methodes et variables statiques</h3>
+					<h3>Méthodes et variables statiques</h3>
 					<pre><code class=" hljs ruby RR_RubyCode" data-trim contenteditable spellcheck="false">
 class Animal
 	@@instance_number = 0
@@ -828,31 +828,31 @@ toto ||= 42
 					</code></pre>
 				</section>
 				<section>
-					<h3>Contrôle d'execution supplementaire</h3>
+					<h3>Contrôles d'exécution supplémentaires</h3>
 					<pre><code class=" hljs ruby" data-trim contenteditable spellcheck="false">
 break #quitter un bloc, une boucle
 next #passer à l'itération suivante
-redo #recomencer l'itéreation courante
-retry #reprendre toute l'execution du bloc depuis le début
+redo #recommencer l'itération courante
+retry #reprendre toute l'exécution du bloc depuis le début
 					</code></pre>
 				</section>
 				<section>
-					<h3>Exeption</h3>
+					<h3>Exception</h3>
 					<pre><code class=" hljs ruby" data-trim contenteditable spellcheck="false">
-begin #implicite quand dans une methode
+begin #implicite quand dans une méthode
 	ouvrir_fichier
 rescue PasLesDroitsExeption
 	afficher_erreur_de_droit
 rescue FichierInexistantExeption
 	demander_nouveau_non_fichier
 	retry
-else #autres types d'exeptions
+else #autres types d'exceptions
 	afficher_erreur
 ensure
 	#toujours exécuté
 end
 
-#lever une exeption:
+#lever une exeption :
 raise
 raise "Message"
 raise TypeException, "Message"
@@ -912,7 +912,7 @@ a2.nom = "a2"
 				</section>
 
 				<section>
-					<h3>Multi fichiers</h3>
+					<h3>Multi-fichiers</h3>
 					<pre><code class=" hljs ruby" data-trim contenteditable spellcheck="false">
 require 'mon_fichier.rb'
 #ou
@@ -928,7 +928,7 @@ require 'mon_fichier'
 				</section>
 				<section>
 					<h3>Modules</h3>
-					<p>On peut utliser les modules pour faire des énumérations, si les valeurs ont un sens. Sinon, on préférera les symboles.</p>
+					<p>On peut utiliser les modules pour faire des énumérations, si les valeurs ont un sens. Sinon, on préférera les symboles.</p>
 					<pre><code class=" hljs ruby" data-trim contenteditable spellcheck="false">
 module Volume
 	HIGHT = 100
@@ -954,16 +954,16 @@ module Logarithme
 	E = 0,577
 
 	def ln
-		puts "calcul logarythme népérien..."
+		puts "calcul logarithme népérien..."
 	end
 end
 
 class Maths
-	include Trigo #methode de Trigo deviennent des méthodes de classe de Maths
-	extend Logarithme # methode de Logarithme deviennent des méthode d'instance de la classe Maths
+	include Trigo #méthode de Trigo deviennent des méthodes de classe de Maths
+	extend Logarithme #méthode de Logarithme deviennent des méthode d'instance de la classe Maths
 
 	def sqrt
-		puts "calcul racinne carrée..."
+		puts "calcul racine carrée..."
 	end
 end
 
@@ -979,8 +979,8 @@ m.sqrt
 					<h3>Métaprogrammation</h3>
 					<ul>
 						<li>Classes ouvertes</li>
-						<li>Réféxivité/Introspection</li>
-						<li>Création/destrcution de méthodes à l'execution</li>
+						<li>Réféxivité / Introspection</li>
+						<li>Création / destruction de méthodes à l'exécution</li>
 						<li>Possibilité de changer les comportements en cas d'erreur</li>
 						<li>Eigen class</li>
 					</ul>
